@@ -1,0 +1,34 @@
+{% extends 'glowny.html' %}
+{% block producent%} Lista opon {% endblock %}
+
+
+{% include "navbar.html" %}
+
+
+
+
+{% block strona%}
+# Dodac zdjecia bo nie działa
+<div style="text-align: center;">
+
+    <a href="{% url 'nowa_opona' %}">nowa opona</a>
+    {% if opony|length == 0%}
+        <h2>brak opon</h2>
+    {% else %}
+        <h2>Ilosc opon w bazie: {{ opony |length}}</h2>
+        <h1> </h1>
+    {% for opona in opony %}
+        <h2> {{ opona }}</h2>
+        <p>{{ opona.opis}}</p>
+        <img src="{{ opona.zdjecie}}">
+
+        <a href="{% url 'kup_opone' opona.id %}">Kup</a>
+        <a href="{% url 'edytuj_opone' opona.id %}">Edytuj</a>
+        <a href="{% url 'usun_opone' opona.id %}">Usun</a>
+    {% endfor %}
+
+{% endif %}
+
+    <div/>
+
+{% endblock %}

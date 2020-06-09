@@ -1,0 +1,31 @@
+
+{% include "../navbar.html" %}
+
+
+ 			<center>
+					<div class="alert alert-danger">
+					  <h4 class="form-signin-heading">Nie jesteś zalogowany lub zostałeś wylogowany</h4>
+					</div>
+					<h2 class="alert alert-info">Proszę się zalogować</h2>
+			</center>
+
+
+
+
+	<div style="text-align: center;">
+		    <form class="alert alert-info" method="post">
+				{% csrf_token%}
+				{{form}}<br>
+				<button class="btn btn-lg btn btn-success btn-sm" type= "submit"> Zaloguj</button>
+			</form>
+
+
+	</div>
+
+
+
+
+
+
+
+
