@@ -51,7 +51,7 @@ def kup_opone(request, id):
 
 
 def rejestracja(request, id):
-    return render(request, 'rejestracja.html', {'opony'})
+    return render(request, 'rejestracja.html', {''})
 
 
 
