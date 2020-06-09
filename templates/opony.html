@@ -9,9 +9,9 @@
 
 {% block strona%}
 # Dodac zdjecia bo nie działa
-<div style="text-align: center;">
 
 
+<div class="content_center">
     {% if opony|length == 0%}
         <h2>brak opon</h2>
         <a href="{% url 'nowa_opona' %}">nowa opona</a>
@@ -22,11 +22,15 @@
     {% endif %}
 
         <h2>Ilosc opon w bazie: {{ opony |length}}</h2>
-        <h1> </h1>
+
+    <div/>
+
+    <div class="content_left">
     {% for opona in opony %}
         <h2> {{ opona }}</h2>
 
         <p>{{ opona.opis}}</p>
+
         <img src="/media/{{ opona.zdjecie}}">
 
 
@@ -39,6 +43,7 @@
         <a href="{% url 'kup_opone' opona.id %}">Kup</a>
 
         {% endif %}
+ <div/>
 
         <br><br><br>
 
@@ -46,6 +51,6 @@
 
 {% endif %}
 
-    <div/>
+
 
 {% endblock %}

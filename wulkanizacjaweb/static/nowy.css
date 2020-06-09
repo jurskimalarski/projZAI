@@ -6,41 +6,20 @@ body {
     background-clip: red;
 }
 
-.content_left{
-    padding-left: 10px;
-    clear: both;
-    overflow: hidden;
-    margin: 0 auto;
-    /* załamanie tekstu*/
-    word-wrap:break-word;
-    max-width:100%;
 
+.content_left{
 
 }
 
 .content_right{
 
-    padding-right: 10px;
-    clear: both;
-    overflow: hidden;
-    margin: 0 auto;
-    /* załamanie tekstu*/
-    word-wrap:break-word;
-    max-width:100%;
-
-
-
 }
 
 .content_center{
-    clear: both;
-    overflow: hidden;
-    margin: 0 auto;
-    width: 950px;
-    padding-top: 20px;
-    /* załamanie tekstu*/
-    word-wrap:break-word;
-    max-width:100%;
+
+    padding-top: 5%;
+    position: absolute;
+    position: center;
 }
 
 /* napis Witaj.. */
