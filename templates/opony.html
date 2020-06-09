@@ -26,11 +26,17 @@
 
 
 
+        {% if user.is_authenticated %}<br>
 
-
-        <a href="{% url 'kup_opone' opona.id %}">Kup</a>
         <a href="{% url 'edytuj_opone' opona.id %}">Edytuj</a>
         <a href="{% url 'usun_opone' opona.id %}">Usun</a>
+        {% else %}
+        <a href="{% url 'kup_opone' opona.id %}">Kup</a>
+
+        {% endif %}
+
+
+
     {% endfor %}
 
 {% endif %}
