@@ -6,6 +6,23 @@ body {
     background-clip: red;
 }
 
+.content_left{
+
+    clear: both;
+    overflow: hidden;
+    margin: 0 auto;
+    /* załamanie tekstu*/
+    word-wrap:break-word;
+    max-width:100%;
+
+
+}
+
+.content_right{
+    float:right}
+
+
+}
 
 .content_center{
     clear: both;
