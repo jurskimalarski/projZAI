@@ -7,7 +7,7 @@ body {
 }
 
 .content_left{
-
+    padding-left: 10px;
     clear: both;
     overflow: hidden;
     margin: 0 auto;
@@ -19,6 +19,14 @@ body {
 }
 
 .content_right{
+
+    padding-right: 10px;
+    clear: both;
+    overflow: hidden;
+    margin: 0 auto;
+    /* załamanie tekstu*/
+    word-wrap:break-word;
+    max-width:100%;
 
 
 
