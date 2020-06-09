@@ -1,15 +1,15 @@
 {% include "navbar.html" %}
 
 <body>
-<div style="text-align: center;">
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form }}
-        <button type="submit">dodaj opony</button>
+    <div style="text-align: center;">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">dodaj opony</button>
 
-    </form>
+        </form>
 
-    <div/>
+        <div/>
 </body>
 
 
