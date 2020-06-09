@@ -1,0 +1,72 @@
+Index: wulkanizacja/urls.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\"\"\"wulkanizacja URL Configuration\r\n\r\nThe `urlpatterns` list routes URLs to views. For more information please see:\r\n    https://docs.djangoproject.com/en/3.0/topics/http/urls/\r\nExamples:\r\nFunction views\r\n    1. Add an import:  from my_app import views\r\n    2. Add a URL to urlpatterns:  path('', views.home, name='home')\r\nClass-based views\r\n    1. Add an import:  from other_app.views import Home\r\n    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')\r\nIncluding another URLconf\r\n    1. Import the include() function: from django.urls import include, path\r\n    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))\r\n\"\"\"\r\nfrom django.contrib import admin\r\nfrom django.urls import path, include\r\nfrom django.conf import settings\r\nfrom django.conf.urls.static import static\r\nfrom django.contrib.auth import views as auth_views\r\nurlpatterns = [\r\n    path('admin/', admin.site.urls),\r\n    path('opony/', include('wulkanizacjaweb.urls')),\r\n    path('login/', auth_views.LoginView.as_view(), name=\"login\"),\r\n    path('logout/', auth_views.LogoutView.as_view(), name=\"logout\"),\r\n    path('rejestracja/', rejestracja, name=\"rejestracja\")\r\n\r\n    #path('', views.index, name='index'),\r\n\r\n\r\n] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- wulkanizacja/urls.py	(revision 772b775269eb4aac00760ae7b48cae5f9649d971)
++++ wulkanizacja/urls.py	(date 1591733463031)
+@@ -23,7 +23,6 @@
+     path('opony/', include('wulkanizacjaweb.urls')),
+     path('login/', auth_views.LoginView.as_view(), name="login"),
+     path('logout/', auth_views.LogoutView.as_view(), name="logout"),
+-    path('rejestracja/', rejestracja, name="rejestracja")
+ 
+     #path('', views.index, name='index'),
+ 
+Index: wulkanizacjaweb/urls.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from wulkanizacjaweb.views import wszystkie_opony\r\nfrom django.urls import path\r\nfrom wulkanizacjaweb.views import wszystkie_opony, nowa_opona, edytuj_opone, usun_opone, kup_opone, rejestracja\r\n\r\nurlpatterns = [\r\n    path('wszystkie/', wszystkie_opony, name=\"wszystkie_opony\"),\r\n    path('nowa/', nowa_opona, name=\"nowa_opona\"),\r\n    path('edytuj/<int:id>', edytuj_opone, name=\"edytuj_opone\"),\r\n    path('usun/<int:id>', usun_opone, name=\"usun_opone\"),\r\n    path('kup/<int:id>', kup_opone, name=\"kup_opone\"),\r\n    #path('rejestracja/', rejestracja, name=\"rejestracja\"),\r\n\r\n\r\n    #path('', views.index, name='index'),\r\n    #path('index/', index, name=\"index\"),\r\n]\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- wulkanizacjaweb/urls.py	(revision 772b775269eb4aac00760ae7b48cae5f9649d971)
++++ wulkanizacjaweb/urls.py	(date 1591733463026)
+@@ -8,7 +8,7 @@
+     path('edytuj/<int:id>', edytuj_opone, name="edytuj_opone"),
+     path('usun/<int:id>', usun_opone, name="usun_opone"),
+     path('kup/<int:id>', kup_opone, name="kup_opone"),
+-    #path('rejestracja/', rejestracja, name="rejestracja"),
++    path('rejestracja/', rejestracja, name="rejestracja"),
+ 
+ 
+     #path('', views.index, name='index'),
+Index: wulkanizacjaweb/views.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django.shortcuts import render, get_object_or_404, redirect\r\nfrom django.http import HttpResponse\r\nfrom .models import Opony, Koszyk\r\nfrom .forms import OponaForm\r\nfrom django.contrib.auth.decorators import login_required\r\n# Create your views here.\r\n\r\ndef wszystkie_opony(request):\r\n    wszystkie = Opony.objects.all()\r\n    return render(request, 'opony.html', {'opony': wszystkie})\r\n\r\n@login_required\r\ndef nowa_opona(request):\r\n     form = OponaForm(request.POST or None, request.FILES or None)\r\n\r\n     if form.is_valid():\r\n         form.save()\r\n         return redirect(wszystkie_opony)\r\n\r\n     return render(request, 'opona_form.html', {'form': form})\r\n\r\n@login_required\r\ndef edytuj_opone(request, id):\r\n     opona = get_object_or_404(Opony,  pk=id)\r\n     form = OponaForm(request.POST or None, request.FILES or None, instance=opona)\r\n\r\n     if form.is_valid():\r\n          form.save()\r\n          return redirect(wszystkie_opony)\r\n\r\n     return render(request, 'opona_form.html', {'form': form})\r\n\r\n@login_required\r\ndef usun_opone(request, id):\r\n    opona = get_object_or_404(Opony, pk=id)\r\n\r\n    if request.method ==\"POST\":\r\n        opona.delete()\r\n        return redirect(wszystkie_opony)\r\n\r\n    return render(request, 'potwierdz.html', {'opona': opona})\r\n\r\n@login_required\r\ndef kup_opone(request, id):\r\n    opona = get_object_or_404(Opony, pk=id)\r\n    kupiona_opona = OponaForm(request.POST or None, request.FILES or None, instance=opona)\r\n    if request.method ==\"POST\":\r\n        kupiona_opona.save()\r\n        return redirect(wszystkie_opony)\r\n    return render(request, 'koszyk.html', {'koszyk': kupiona_opona})\r\n\r\n\r\ndef rejestracja(request, id):\r\n    return render(request, 'rejestracja.html', {''})\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- wulkanizacjaweb/views.py	(revision 772b775269eb4aac00760ae7b48cae5f9649d971)
++++ wulkanizacjaweb/views.py	(date 1591733629619)
+@@ -51,7 +51,8 @@
+ 
+ 
+ def rejestracja(request, id):
+-    return render(request, 'rejestracja.html', {''})
++
++    return render(request, 'rejestracja.html', {'rejestracja': rejestracja})
+ 
+ 
+ 
+Index: templates/opony.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% extends 'glowny.html' %}\r\n{% block producent%} Lista opon {% endblock %}\r\n\r\n\r\n{% include \"navbar.html\" %}\r\n\r\n\r\n\r\n\r\n{% block strona%}\r\n# Dodac zdjecia bo nie działa\r\n<div style=\"text-align: center;\">\r\n\r\n    <a href=\"{% url 'nowa_opona' %}\">nowa opona</a>\r\n    {% if opony|length == 0%}\r\n        <h2>brak opon</h2>\r\n    {% else %}\r\n        <h2>Ilosc opon w bazie: {{ opony |length}}</h2>\r\n        <h1> </h1>\r\n    {% for opona in opony %}\r\n        <h2> {{ opona }}</h2>\r\n        <p>{{ opona.opis}}</p>\r\n        <img src=\"/media/{{ opona.zdjecie}}\">\r\n\r\n\r\n\r\n\r\n\r\n        <a href=\"{% url 'kup_opone' opona.id %}\">Kup</a>\r\n        <a href=\"{% url 'edytuj_opone' opona.id %}\">Edytuj</a>\r\n        <a href=\"{% url 'usun_opone' opona.id %}\">Usun</a>\r\n    {% endfor %}\r\n\r\n{% endif %}\r\n\r\n    <div/>\r\n\r\n{% endblock %}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- templates/opony.html	(revision 772b775269eb4aac00760ae7b48cae5f9649d971)
++++ templates/opony.html	(date 1591733629614)
+@@ -8,7 +8,7 @@
+ 
+ 
+ {% block strona%}
+-# Dodac zdjecia bo nie działa
++
+ <div style="text-align: center;">
+ 
+     <a href="{% url 'nowa_opona' %}">nowa opona</a>

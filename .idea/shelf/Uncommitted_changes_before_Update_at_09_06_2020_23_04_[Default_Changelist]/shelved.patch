@@ -1,0 +1,54 @@
+Index: .idea/runConfigurations/manage.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"ProjectRunConfigurationManager\">\r\n  <configuration default=\"false\" name=\"manage\" type=\"PythonConfigurationType\" factoryName=\"Python\" singleton=\"false\" nameIsGenerated=\"true\">\r\n    <module name=\"projZAI\" />\r\n    <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n    <option name=\"PARENT_ENVS\" value=\"true\" />\r\n    <envs>\r\n      <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n    </envs>\r\n    <option name=\"SDK_HOME\" value=\"C:\\Users\\F-20-V1\\venv\\Scripts\\python.exe\" />\r\n    <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n    <option name=\"IS_MODULE_SDK\" value=\"false\" />\r\n    <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n    <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n    <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\r\n    <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/manage.py\" />\r\n    <option name=\"PARAMETERS\" value=\"runserver\" />\r\n    <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n    <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n    <option name=\"MODULE_MODE\" value=\"false\" />\r\n    <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n    <option name=\"INPUT_FILE\" value=\"\" />\r\n    <method v=\"2\" />\r\n  </configuration>\r\n</component>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/runConfigurations/manage.xml	(revision c6cae0508139aac6fe8e3b0372232490d9c985c8)
++++ .idea/runConfigurations/manage.xml	(date 1591736434571)
+@@ -6,7 +6,7 @@
+     <envs>
+       <env name="PYTHONUNBUFFERED" value="1" />
+     </envs>
+-    <option name="SDK_HOME" value="C:\Users\F-20-V1\venv\Scripts\python.exe" />
++    <option name="SDK_HOME" value="C:\Users\dudu\AppData\Local\Programs\Python\Python38-32\python.exe" />
+     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+     <option name="IS_MODULE_SDK" value="false" />
+     <option name="ADD_CONTENT_ROOTS" value="true" />
+Index: .idea/projZAI.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"PYTHON_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\">\r\n    <content url=\"file://$MODULE_DIR$\">\r\n      <sourceFolder url=\"file://$MODULE_DIR$\" isTestSource=\"false\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/.idea\" isTestSource=\"false\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/.idea/dataSources\" isTestSource=\"false\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/.idea/inspectionProfiles\" isTestSource=\"false\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/templates\" isTestSource=\"false\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/templates/registration\" isTestSource=\"false\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/venv/Lib\" isTestSource=\"false\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/venv/Scripts\" isTestSource=\"false\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/wulkanizacja\" isTestSource=\"false\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/wulkanizacjaweb\" isTestSource=\"false\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/wulkanizacjaweb/migrations\" isTestSource=\"false\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/wulkanizacjaweb/static\" isTestSource=\"false\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/zdjecia\" isTestSource=\"false\" />\r\n      <excludeFolder url=\"file://$MODULE_DIR$/venv\" />\r\n    </content>\r\n    <orderEntry type=\"jdk\" jdkName=\"Python 3.8 (venv)\" jdkType=\"Python SDK\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/projZAI.iml	(revision c6cae0508139aac6fe8e3b0372232490d9c985c8)
++++ .idea/projZAI.iml	(date 1591736434617)
+@@ -17,7 +17,7 @@
+       <sourceFolder url="file://$MODULE_DIR$/zdjecia" isTestSource="false" />
+       <excludeFolder url="file://$MODULE_DIR$/venv" />
+     </content>
+-    <orderEntry type="jdk" jdkName="Python 3.8 (venv)" jdkType="Python SDK" />
++    <orderEntry type="inheritedJdk" />
+     <orderEntry type="sourceFolder" forTests="false" />
+   </component>
+ </module>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"JavaScriptSettings\">\r\n    <option name=\"languageLevel\" value=\"ES6\" />\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" project-jdk-name=\"Python 3.8 (venv)\" project-jdk-type=\"Python SDK\" />\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/misc.xml	(revision c6cae0508139aac6fe8e3b0372232490d9c985c8)
++++ .idea/misc.xml	(date 1591736434634)
+@@ -3,5 +3,5 @@
+   <component name="JavaScriptSettings">
+     <option name="languageLevel" value="ES6" />
+   </component>
+-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.8 (venv)" project-jdk-type="Python SDK" />
++  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.8 (projZAI)" project-jdk-type="Python SDK" />
+ </project>
+\ No newline at end of file

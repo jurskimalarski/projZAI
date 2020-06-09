@@ -1,0 +1,6 @@
+diff --git venv/Lib/site-packages/setuptools/script (dev).tmpl
+rename from venv/Lib/site-packages/setuptools/script
+rename to (dev).tmpl
+diff --git venv/Lib/site-packages/setuptools/command/launcher manifest.xml
+rename from venv/Lib/site-packages/setuptools/command/launcher
+rename to manifest.xml
