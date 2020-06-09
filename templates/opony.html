@@ -16,6 +16,11 @@
         <h2>brak opon</h2>
         <a href="{% url 'nowa_opona' %}">nowa opona</a>
     {% else %}
+    {% if user.is_authenticated %}<br>
+        <a href="{% url 'nowa_opona' %}">nowa opona</a>
+    {% else %}
+    {% endif %}
+
         <h2>Ilosc opon w bazie: {{ opony |length}}</h2>
         <h1> </h1>
     {% for opona in opony %}
@@ -35,7 +40,7 @@
 
         {% endif %}
 
-
+        <br><br><br>
 
     {% endfor %}
 
