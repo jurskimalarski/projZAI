@@ -25,7 +25,7 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(), name="login"),
     path('logout/', auth_views.LogoutView.as_view(), name="logout"),
     #path('rejestracja/', rejestracja, name="rejestracja")
-
+    #path(r'', include('index.urls', name='index'))
     #path('', views.index, name='index'),
 
 
