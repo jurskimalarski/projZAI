@@ -2,13 +2,14 @@
 
 <body>
     <div style="text-align: center;">
-        <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ form }}
-            <button type="submit">dodaj opony</button>
-
-        </form>
-
+        <div class="srodek">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form }}
+                <br>
+                <button class="btn btn-outline-success" type="submit">Dodaj opone !! </button>
+            </form>
+        </div>
         <div/>
 </body>
 
