@@ -44,7 +44,7 @@
 
 
      {% if user.is_authenticated %}
-        <a class="btn btn-outline-success" href="{% url 'kup_opone' opona.id %}">Kup</a>
+        <a class="btn btn-outline-success" href="{% url 'kup_opone' opona.id %}">Kup / Rezerwuj</a>
         <a class="btn btn-outline-danger" href="{% url 'edytuj_opone' opona.id %}">Edytuj</a>
         <a class="btn btn-outline-danger" href="{% url 'usun_opone' opona.id %}">Usun</a>
 
@@ -52,7 +52,7 @@
 
 
      {% else %}
-        <a class="btn btn-outline-success" href="{% url 'kup_opone' opona.id %}">Kup</a>
+        <a class="btn btn-outline-success" href="{% url 'kup_opone' opona.id %}">Kup / Rezerwuj</a>
 
 
      {% endif %}
