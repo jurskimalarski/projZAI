@@ -11,10 +11,12 @@
 
     {% if opony|length == 0%}
         <h2>brak opon</h2>
-        <a href="{% url 'nowa_opona' %}">nowa opona</a>
+
+
+    <a class="btn btn-outline-success" href="{% url 'kup_opone' opona.id %}">Kup</a>
     {% else %}
     {% if user.is_authenticated %}<br>
-        <a href="{% url 'nowa_opona' %}">nowa opona</a>
+        <a class="btn btn-outline-success" href="{% url 'nowa_opona' %}">Dodaj nową opone</a>
     {% else %}
     {% endif %}
 
@@ -37,17 +39,25 @@
         <p>Szerokosc:{{ opona.szerokosc}}</p>
         <p>Profil opony: {{ opona.profil}}</p>
         <p>Srednica w calach: {{ opona.srednica}}</p>
-        <p>Opis: {{opona.opis}}</p>
+        <p1>Opis: {{opona.opis}}</p1>
+        <br><br>
+
+
 
 
 
 
      {% if user.is_authenticated %}
-        <a href="{% url 'kup_opone' opona.id %}">Kup</a>
-         <a href="{% url 'edytuj_opone' opona.id %}">Edytuj</a>
-         <a href="{% url 'usun_opone' opona.id %}">Usun</a>
+        <a class="btn btn-outline-success" href="{% url 'kup_opone' opona.id %}">Kup</a>
+        <a class="btn btn-outline-danger" href="{% url 'edytuj_opone' opona.id %}">Edytuj</a>
+        <a class="btn btn-outline-danger" href="{% url 'usun_opone' opona.id %}">Usun</a>
+
+
+
+
      {% else %}
-         <a href="{% url 'kup_opone' opona.id %}">Kup</a>
+        <a class="btn btn-outline-success" href="{% url 'kup_opone' opona.id %}">Kup</a>
+
 
      {% endif %}
         </div>

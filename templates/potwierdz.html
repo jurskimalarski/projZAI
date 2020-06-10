@@ -4,10 +4,12 @@
 {% block producent%} Lista opon {% endblock %}
 
 {% block strona%}
-    <h1>Czy na pewno chcesz usunac {{ opona.producent }} ?</h1>
+<div class="srodek">
+    <h1>Czy na pewno chcesz usunac opone {{ opona.producent }} {{ opona.modelnazwa}} {{ opona.szerokosc}}/{{ opona.profil}}R{{ opona.srednica}} ?</h1>
     <form method="post">
         {% csrf_token %}
-        <button type="submit">Tak Usuń !! </button>
+        <button class="btn btn-outline-danger" type="submit">Tak Usuń !! </button>
 
     </form>
+</div>
 {% endblock %}
