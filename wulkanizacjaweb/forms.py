@@ -4,5 +4,5 @@ from .models import Opony
 class OponaForm(ModelForm):
     class Meta:
         model = Opony
-        fields = ['producent', 'szerokosc','profil','srednica','opis','rok_produkcji', 'zdjecie']
+        fields = ['producent','modelnazwa','szerokosc','profil','srednica','opis','rok_produkcji', 'zdjecie']
 

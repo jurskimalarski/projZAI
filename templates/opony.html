@@ -5,13 +5,10 @@
 {% include "navbar.html" %}
 
 
-
-
 {% block strona%}
-# Dodac zdjecia bo nie działa
 
+<div class="srodek">
 
-<div class="content_center">
     {% if opony|length == 0%}
         <h2>brak opon</h2>
         <a href="{% url 'nowa_opona' %}">nowa opona</a>
@@ -22,35 +19,44 @@
     {% endif %}
 
         <h2>Ilosc opon w bazie: {{ opony |length}}</h2>
+</div>
+{% for opona in opony %}
+<div class="cale">
 
-    <div/>
-
-    <div class="content_left">
-    {% for opona in opony %}
-        <h2> {{ opona }}</h2>
-
-        <p>{{ opona.opis}}</p>
+    <div class="lewy">
 
         <img src="/media/{{ opona.zdjecie}}">
 
+    </div>
+
+    <div class="prawy">
 
 
-        {% if user.is_authenticated %}<br>
+        <h2> {{ opona.producent }}</h2>
+        <p> {{ opona.modelnazwa}} {{ opona.szerokosc}}/{{ opona.profil}}R{{ opona.srednica}}</p>
+        <p>Szerokosc:{{ opona.szerokosc}}</p>
+        <p>Profil opony: {{ opona.profil}}</p>
+        <p>Srednica w calach: {{ opona.srednica}}</p>
+        <p>Opis: {{opona.opis}}</p>
 
-        <a href="{% url 'edytuj_opone' opona.id %}">Edytuj</a>
-        <a href="{% url 'usun_opone' opona.id %}">Usun</a>
-        {% else %}
+
+
+
+     {% if user.is_authenticated %}
         <a href="{% url 'kup_opone' opona.id %}">Kup</a>
+         <a href="{% url 'edytuj_opone' opona.id %}">Edytuj</a>
+         <a href="{% url 'usun_opone' opona.id %}">Usun</a>
+     {% else %}
+         <a href="{% url 'kup_opone' opona.id %}">Kup</a>
 
-        {% endif %}
- <div/>
+     {% endif %}
+        </div>
+     {% endfor %}
 
-        <br><br><br>
-
-    {% endfor %}
-
-{% endif %}
+     {% endif %}
 
 
 
-{% endblock %}
+</div>
+
+     {% endblock %}

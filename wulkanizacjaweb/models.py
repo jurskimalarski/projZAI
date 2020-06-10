@@ -5,6 +5,7 @@ from django.db import models
 
 class Opony(models.Model):
     producent = models.CharField(max_length=32, blank=False)
+    modelnazwa = models.CharField(max_length=64, blank=False)
     szerokosc = models.PositiveSmallIntegerField(default=0)
     profil = models.PositiveSmallIntegerField(default=0)
     srednica = models.PositiveSmallIntegerField(default=0)
